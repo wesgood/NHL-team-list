@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXD-hr-21x">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NHL teams-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NHL_teams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-QO-Dnd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TTI-61-mx1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FI5-Iu-CYK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="W1D-QO-Dnd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JTE-hm-AhD"/>
+                            <constraint firstItem="W1D-QO-Dnd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NCY-jG-B3p"/>
+                            <constraint firstItem="W1D-QO-Dnd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jNh-qU-qoz"/>
+                            <constraint firstItem="W1D-QO-Dnd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rvD-tH-pQw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NHL teams" id="xpq-fa-aE6">
+                        <barButtonItem key="leftBarButtonItem" image="icon-menu" id="4K7-Hy-D1o">
+                            <connections>
+                                <segue destination="IP6-9u-h3g" kind="presentation" id="AE9-uv-GBK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="W1D-QO-Dnd" id="Rfx-lf-Jzd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--Select a team-->
+        <scene sceneID="7T4-b6-7Zr">
+            <objects>
+                <tableViewController id="RUM-En-oR6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wyv-qR-0fu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="RUM-En-oR6" id="ssk-fy-ANX"/>
+                            <outlet property="delegate" destination="RUM-En-oR6" id="6Bu-jn-LBl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select a team" id="n1s-L2-spd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8B7-6w-J1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2914.4927536231885" y="126.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wcV-EK-VeN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vXD-hr-21x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Ul4-5s-i3L"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="leF-4r-zPj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5DG-wV-scM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cny-Iy-d0u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="mdE-tN-WbK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IP6-9u-h3g" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DaH-C5-MTe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="RUM-En-oR6" kind="relationship" relationship="rootViewController" id="jAn-R8-laW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qs3-r4-OU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2002.8985507246377" y="126.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-menu" width="50" height="50"/>
+    </resources>
+</document>

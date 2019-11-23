@@ -3,115 +3,154 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83F61C582389EBE10077B19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C572389EBE10077B19E /* AppDelegate.swift */; };
-		83F61C5A2389EBE10077B19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C592389EBE10077B19E /* SceneDelegate.swift */; };
-		83F61C5C2389EBE10077B19E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C5B2389EBE10077B19E /* ContentView.swift */; };
-		83F61C5E2389EBE30077B19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F61C5D2389EBE30077B19E /* Assets.xcassets */; };
-		83F61C612389EBE30077B19E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F61C602389EBE30077B19E /* Preview Assets.xcassets */; };
-		83F61C642389EBE30077B19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F61C622389EBE30077B19E /* LaunchScreen.storyboard */; };
-		C9F56409C33F6194842F889C /* Pods_NHL_teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27326E59456704552AA97255 /* Pods_NHL_teams.framework */; };
+		838C49AF2389F2C3003E7400 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49AD2389F2C3003E7400 /* TeamViewController.swift */; };
+		838C49B02389F2C3003E7400 /* TeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838C49AE2389F2C3003E7400 /* TeamViewController.xib */; };
+		838C49B32389F30F003E7400 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B12389F30F003E7400 /* PlayerViewController.swift */; };
+		838C49B42389F30F003E7400 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838C49B22389F30F003E7400 /* PlayerViewController.xib */; };
+		838C49B72389F335003E7400 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B62389F335003E7400 /* DataModel.swift */; };
+		838C49B92389F34A003E7400 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B82389F34A003E7400 /* Team.swift */; };
+		838C49BB2389F354003E7400 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49BA2389F354003E7400 /* Player.swift */; };
+		838C49BE2389F6ED003E7400 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49BD2389F6ED003E7400 /* UIViewController+Extensions.swift */; };
+		83F61C782389EF340077B19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C772389EF340077B19E /* AppDelegate.swift */; };
+		83F61C7A2389EF340077B19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C792389EF340077B19E /* SceneDelegate.swift */; };
+		83F61C7C2389EF340077B19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C7B2389EF340077B19E /* ViewController.swift */; };
+		83F61C7F2389EF340077B19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F61C7D2389EF340077B19E /* Main.storyboard */; };
+		83F61C812389EF350077B19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F61C802389EF350077B19E /* Assets.xcassets */; };
+		83F61C842389EF350077B19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F61C822389EF350077B19E /* LaunchScreen.storyboard */; };
+		F88839681A6A1FD43BC31A76 /* Pods_NHL_teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7104A820890E3214F36593E4 /* Pods_NHL_teams.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03F418A709831025DFB1F401 /* Pods-NHL teams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NHL teams.debug.xcconfig"; path = "Target Support Files/Pods-NHL teams/Pods-NHL teams.debug.xcconfig"; sourceTree = "<group>"; };
-		27326E59456704552AA97255 /* Pods_NHL_teams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NHL_teams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3729246E02CCA26249767DF1 /* Pods-NHL teams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NHL teams.release.xcconfig"; path = "Target Support Files/Pods-NHL teams/Pods-NHL teams.release.xcconfig"; sourceTree = "<group>"; };
-		83F61C542389EBE10077B19E /* NHL teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NHL teams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		83F61C572389EBE10077B19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		83F61C592389EBE10077B19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		83F61C5B2389EBE10077B19E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		83F61C5D2389EBE30077B19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		83F61C602389EBE30077B19E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		83F61C632389EBE30077B19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83F61C652389EBE30077B19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3586A1D60C70DD8B2BB1F6F6 /* Pods-NHL teams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NHL teams.debug.xcconfig"; path = "Target Support Files/Pods-NHL teams/Pods-NHL teams.debug.xcconfig"; sourceTree = "<group>"; };
+		7104A820890E3214F36593E4 /* Pods_NHL_teams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NHL_teams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		838C49AD2389F2C3003E7400 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		838C49AE2389F2C3003E7400 /* TeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamViewController.xib; sourceTree = "<group>"; };
+		838C49B12389F30F003E7400 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		838C49B22389F30F003E7400 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		838C49B62389F335003E7400 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		838C49B82389F34A003E7400 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		838C49BA2389F354003E7400 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		838C49BD2389F6ED003E7400 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		83F61C742389EF340077B19E /* NHL teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NHL teams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F61C772389EF340077B19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83F61C792389EF340077B19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		83F61C7B2389EF340077B19E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83F61C7E2389EF340077B19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83F61C802389EF350077B19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83F61C832389EF350077B19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83F61C852389EF350077B19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5C48EE0642CF77556437D22 /* Pods-NHL teams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NHL teams.release.xcconfig"; path = "Target Support Files/Pods-NHL teams/Pods-NHL teams.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		83F61C512389EBE10077B19E /* Frameworks */ = {
+		83F61C712389EF340077B19E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F56409C33F6194842F889C /* Pods_NHL_teams.framework in Frameworks */,
+				F88839681A6A1FD43BC31A76 /* Pods_NHL_teams.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		83F61C4B2389EBE10077B19E = {
+		0E7482EB5F7824CC4CD32BB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83F61C562389EBE10077B19E /* NHL teams */,
-				83F61C552389EBE10077B19E /* Products */,
-				E7D5FB1F290F259F4C394B11 /* Pods */,
-				F822581A2E4B1767116E1C6A /* Frameworks */,
+				7104A820890E3214F36593E4 /* Pods_NHL_teams.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		240E71883C3498DD4532832D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3586A1D60C70DD8B2BB1F6F6 /* Pods-NHL teams.debug.xcconfig */,
+				C5C48EE0642CF77556437D22 /* Pods-NHL teams.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		838C49AC2389F2A7003E7400 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83F61C7B2389EF340077B19E /* ViewController.swift */,
+				838C49AD2389F2C3003E7400 /* TeamViewController.swift */,
+				838C49AE2389F2C3003E7400 /* TeamViewController.xib */,
+				838C49B12389F30F003E7400 /* PlayerViewController.swift */,
+				838C49B22389F30F003E7400 /* PlayerViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		838C49B52389F318003E7400 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				838C49B62389F335003E7400 /* DataModel.swift */,
+				838C49B82389F34A003E7400 /* Team.swift */,
+				838C49BA2389F354003E7400 /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		838C49BC2389F6D7003E7400 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				838C49BD2389F6ED003E7400 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83F61C6B2389EF340077B19E = {
+			isa = PBXGroup;
+			children = (
+				83F61C762389EF340077B19E /* NHL teams */,
+				83F61C752389EF340077B19E /* Products */,
+				240E71883C3498DD4532832D /* Pods */,
+				0E7482EB5F7824CC4CD32BB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		83F61C552389EBE10077B19E /* Products */ = {
+		83F61C752389EF340077B19E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83F61C542389EBE10077B19E /* NHL teams.app */,
+				83F61C742389EF340077B19E /* NHL teams.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		83F61C562389EBE10077B19E /* NHL teams */ = {
+		83F61C762389EF340077B19E /* NHL teams */ = {
 			isa = PBXGroup;
 			children = (
-				83F61C572389EBE10077B19E /* AppDelegate.swift */,
-				83F61C592389EBE10077B19E /* SceneDelegate.swift */,
-				83F61C5B2389EBE10077B19E /* ContentView.swift */,
-				83F61C5D2389EBE30077B19E /* Assets.xcassets */,
-				83F61C622389EBE30077B19E /* LaunchScreen.storyboard */,
-				83F61C652389EBE30077B19E /* Info.plist */,
-				83F61C5F2389EBE30077B19E /* Preview Content */,
+				83F61C772389EF340077B19E /* AppDelegate.swift */,
+				83F61C792389EF340077B19E /* SceneDelegate.swift */,
+				838C49B52389F318003E7400 /* Models */,
+				838C49BC2389F6D7003E7400 /* Extensions */,
+				838C49AC2389F2A7003E7400 /* Controllers */,
+				83F61C7D2389EF340077B19E /* Main.storyboard */,
+				83F61C802389EF350077B19E /* Assets.xcassets */,
+				83F61C822389EF350077B19E /* LaunchScreen.storyboard */,
+				83F61C852389EF350077B19E /* Info.plist */,
 			);
 			path = "NHL teams";
-			sourceTree = "<group>";
-		};
-		83F61C5F2389EBE30077B19E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				83F61C602389EBE30077B19E /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E7D5FB1F290F259F4C394B11 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				03F418A709831025DFB1F401 /* Pods-NHL teams.debug.xcconfig */,
-				3729246E02CCA26249767DF1 /* Pods-NHL teams.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		F822581A2E4B1767116E1C6A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				27326E59456704552AA97255 /* Pods_NHL_teams.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		83F61C532389EBE10077B19E /* NHL teams */ = {
+		83F61C732389EF340077B19E /* NHL teams */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83F61C682389EBE30077B19E /* Build configuration list for PBXNativeTarget "NHL teams" */;
+			buildConfigurationList = 83F61C882389EF350077B19E /* Build configuration list for PBXNativeTarget "NHL teams" */;
 			buildPhases = (
-				B5A4DCEA580499E0079B97A7 /* [CP] Check Pods Manifest.lock */,
-				83F61C502389EBE10077B19E /* Sources */,
-				83F61C512389EBE10077B19E /* Frameworks */,
-				83F61C522389EBE10077B19E /* Resources */,
-				28ACF7F9B970CF543CBF892C /* [CP] Embed Pods Frameworks */,
+				A75A6167262AB71EF8508834 /* [CP] Check Pods Manifest.lock */,
+				83F61C702389EF340077B19E /* Sources */,
+				83F61C712389EF340077B19E /* Frameworks */,
+				83F61C722389EF340077B19E /* Resources */,
+				E56900781D3DC1496E127411 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -119,25 +158,25 @@
 			);
 			name = "NHL teams";
 			productName = "NHL teams";
-			productReference = 83F61C542389EBE10077B19E /* NHL teams.app */;
+			productReference = 83F61C742389EF340077B19E /* NHL teams.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		83F61C4C2389EBE10077B19E /* Project object */ = {
+		83F61C6C2389EF340077B19E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Wes Goodhoofd";
 				TargetAttributes = {
-					83F61C532389EBE10077B19E = {
+					83F61C732389EF340077B19E = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 83F61C4F2389EBE10077B19E /* Build configuration list for PBXProject "NHL teams" */;
+			buildConfigurationList = 83F61C6F2389EF340077B19E /* Build configuration list for PBXProject "NHL teams" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -145,48 +184,33 @@
 				en,
 				Base,
 			);
-			mainGroup = 83F61C4B2389EBE10077B19E;
-			productRefGroup = 83F61C552389EBE10077B19E /* Products */;
+			mainGroup = 83F61C6B2389EF340077B19E;
+			productRefGroup = 83F61C752389EF340077B19E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				83F61C532389EBE10077B19E /* NHL teams */,
+				83F61C732389EF340077B19E /* NHL teams */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		83F61C522389EBE10077B19E /* Resources */ = {
+		83F61C722389EF340077B19E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83F61C642389EBE30077B19E /* LaunchScreen.storyboard in Resources */,
-				83F61C612389EBE30077B19E /* Preview Assets.xcassets in Resources */,
-				83F61C5E2389EBE30077B19E /* Assets.xcassets in Resources */,
+				83F61C842389EF350077B19E /* LaunchScreen.storyboard in Resources */,
+				838C49B42389F30F003E7400 /* PlayerViewController.xib in Resources */,
+				838C49B02389F2C3003E7400 /* TeamViewController.xib in Resources */,
+				83F61C812389EF350077B19E /* Assets.xcassets in Resources */,
+				83F61C7F2389EF340077B19E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28ACF7F9B970CF543CBF892C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NHL teams/Pods-NHL teams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NHL teams/Pods-NHL teams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NHL teams/Pods-NHL teams-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B5A4DCEA580499E0079B97A7 /* [CP] Check Pods Manifest.lock */ = {
+		A75A6167262AB71EF8508834 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,26 +232,57 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E56900781D3DC1496E127411 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NHL teams/Pods-NHL teams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NHL teams/Pods-NHL teams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NHL teams/Pods-NHL teams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		83F61C502389EBE10077B19E /* Sources */ = {
+		83F61C702389EF340077B19E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83F61C582389EBE10077B19E /* AppDelegate.swift in Sources */,
-				83F61C5A2389EBE10077B19E /* SceneDelegate.swift in Sources */,
-				83F61C5C2389EBE10077B19E /* ContentView.swift in Sources */,
+				83F61C7C2389EF340077B19E /* ViewController.swift in Sources */,
+				838C49AF2389F2C3003E7400 /* TeamViewController.swift in Sources */,
+				838C49B92389F34A003E7400 /* Team.swift in Sources */,
+				83F61C782389EF340077B19E /* AppDelegate.swift in Sources */,
+				838C49BE2389F6ED003E7400 /* UIViewController+Extensions.swift in Sources */,
+				838C49BB2389F354003E7400 /* Player.swift in Sources */,
+				83F61C7A2389EF340077B19E /* SceneDelegate.swift in Sources */,
+				838C49B32389F30F003E7400 /* PlayerViewController.swift in Sources */,
+				838C49B72389F335003E7400 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		83F61C622389EBE30077B19E /* LaunchScreen.storyboard */ = {
+		83F61C7D2389EF340077B19E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				83F61C632389EBE30077B19E /* Base */,
+				83F61C7E2389EF340077B19E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83F61C822389EF350077B19E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83F61C832389EF350077B19E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -235,7 +290,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		83F61C662389EBE30077B19E /* Debug */ = {
+		83F61C862389EF350077B19E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,7 +350,7 @@
 			};
 			name = Debug;
 		};
-		83F61C672389EBE30077B19E /* Release */ = {
+		83F61C872389EF350077B19E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -349,15 +404,13 @@
 			};
 			name = Release;
 		};
-		83F61C692389EBE30077B19E /* Debug */ = {
+		83F61C892389EF350077B19E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03F418A709831025DFB1F401 /* Pods-NHL teams.debug.xcconfig */;
+			baseConfigurationReference = 3586A1D60C70DD8B2BB1F6F6 /* Pods-NHL teams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NHL teams/Preview Content\"";
 				DEVELOPMENT_TEAM = MCN8WVN6QQ;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "NHL teams/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -370,15 +423,13 @@
 			};
 			name = Debug;
 		};
-		83F61C6A2389EBE30077B19E /* Release */ = {
+		83F61C8A2389EF350077B19E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3729246E02CCA26249767DF1 /* Pods-NHL teams.release.xcconfig */;
+			baseConfigurationReference = C5C48EE0642CF77556437D22 /* Pods-NHL teams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NHL teams/Preview Content\"";
 				DEVELOPMENT_TEAM = MCN8WVN6QQ;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "NHL teams/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,25 +445,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83F61C4F2389EBE10077B19E /* Build configuration list for PBXProject "NHL teams" */ = {
+		83F61C6F2389EF340077B19E /* Build configuration list for PBXProject "NHL teams" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				83F61C662389EBE30077B19E /* Debug */,
-				83F61C672389EBE30077B19E /* Release */,
+				83F61C862389EF350077B19E /* Debug */,
+				83F61C872389EF350077B19E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83F61C682389EBE30077B19E /* Build configuration list for PBXNativeTarget "NHL teams" */ = {
+		83F61C882389EF350077B19E /* Build configuration list for PBXNativeTarget "NHL teams" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				83F61C692389EBE30077B19E /* Debug */,
-				83F61C6A2389EBE30077B19E /* Release */,
+				83F61C892389EF350077B19E /* Debug */,
+				83F61C8A2389EF350077B19E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 83F61C4C2389EBE10077B19E /* Project object */;
+	rootObject = 83F61C6C2389EF340077B19E /* Project object */;
 }
