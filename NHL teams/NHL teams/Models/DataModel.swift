@@ -31,7 +31,7 @@ class DataModel: NSObject {
     
     /// Get a list of sorted teams - from the cache or API as needed
     /// - Parameter complete: callback that returns either the teams or an error message
-    func getTeams(complete: ((_ : [Team]?, _ : String?) -> Void)) {
+    func getTeams(complete: @escaping ((_ : [Team]?, _ : String?) -> Void)) {
         // check for the local cache
         if !teams.isEmpty {
             complete(teams, nil)
@@ -39,6 +39,27 @@ class DataModel: NSObject {
         }
         
         // if the list is empty, call the API
+        AF.request(NHLRouter.getTeams(params: [:]))
+            .validate(statusCode: 200..<300)
+            .responseObject { (response: DataResponse<TeamResponse, AFError>) in
+                    switch response.result {
+                    case .success:
+                        do {
+                        guard let teamList = try response.result.get().teams else {
+                            complete(nil, "Unable to load teams")
+                            break
+                        }
+                            self.teams = teamList.sorted(by: { return $0.name < $1.name })
+                            complete(teamList, nil)
+                        } catch {
+                            complete(nil, "Unable to load teams")
+                        }
+                    case .failure:
+                        if let error = response.error {
+                            complete(nil, error.localizedDescription)
+                        }
+                    }
+                }
     }
     
     /// Search the local list of teams or use the API if necessary
@@ -72,4 +93,29 @@ class DataModel: NSObject {
     
     // MARK: API methods
     
+    enum NHLRouter: URLRequestConvertible {
+        case getTeams(params: Parameters)
+        case getTeam(id: String)
+        case getPlayer(id: String)
+        
+        static let baseURLString = "https://statsapi.web.nhl.com/api/v1/"
+        
+        func asURLRequest() throws -> URLRequest {
+            let result: (path: String, parameters: Parameters) = {
+                switch self {
+                case let .getTeams(params):
+                    return ("/teams", params)
+                case let .getTeam(id):
+                    return ("/teams/\(id)", [:])
+                case let .getPlayer(id):
+                    return ("/people/\(id)", [:])
+                }
+            }()
+            
+            let url = try NHLRouter.baseURLString.asURL()
+            let urlRequest = URLRequest(url: url.appendingPathComponent(result.path))
+            
+            return try URLEncoding.default.encode(urlRequest, with: result.parameters)
+        }
+    }
 }
