@@ -36,6 +36,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.team = team
         
+        showBanner()
+        
         loadTeam()
     }
     
@@ -132,7 +134,53 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    // MARK: Filter overlay
+    // MARK: Banner
     
+    /// Show a team spirit banner
+    func showBanner() {
+        if team?.teamId != 10 {
+            return
+        }
+        
+        let container = UIView(frame: CGRect(x: 0, y: self.navigationController!.navigationBar.frame.maxY - 48, width: self.view.frame.size.width, height: 48))
+        container.backgroundColor = UIColor(red: 0, green: 32/255.0, blue: 91/255.0, alpha: 1.0)
+        
+        let label = UILabel(frame: CGRect.zero)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.text = "Go Leafs Go"
+        label.textColor = UIColor.white
+        label.sizeToFit()
+        label.textAlignment = .center
+        label.center = CGPoint(x: container.frame.size.width/2, y: container.frame.size.height/2)
+        container.addSubview(label)
+        
+        self.view.addSubview(container)
+        
+        toggleTeamBanner(container, show: true)
+    }
+    
+    /// Move the team banner up or down
+    /// - Parameters:
+    ///   - container: container of the banner
+    ///   - show: toggle show or hide
+    func toggleTeamBanner(_ container: UIView, show: Bool) {
+        UIView.animate(withDuration: 0.75, animations: {
+            var frame = container.frame
+            if show {
+                frame.origin.y = self.navigationController!.navigationBar.frame.maxY
+            } else {
+                frame.origin.y = self.navigationController!.navigationBar.frame.maxY - container.frame.size.height
+            }
+            container.frame = frame
+        }) { (complete) in
+            if show {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.toggleTeamBanner(container, show: false)
+                }
+            } else {
+                container.removeFromSuperview()
+            }
+        }
+    }
 }
 
