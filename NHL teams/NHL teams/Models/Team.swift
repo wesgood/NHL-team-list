@@ -27,16 +27,24 @@ class Team: NSObject, Mappable {
         players <- map["roster.roster"]
     }
     
-    func sortedPlayers(_ sort: DataModel.TeamSort) -> [Player] {
+    func sortedPlayers(_ sort: DataModel.TeamSort, filter: String? = nil) -> [Player] {
         if players == nil {
             return []
         }
         
+        var filtered = players
+        
+        if filter != nil {
+            filtered = players!.filter({ return $0.position == filter! })
+        }
+        
         switch sort {
         case .name:
-            return players!.sorted(by: { $0.name < $1.name })
+            return filtered!.sorted(by: { $0.name < $1.name })
         case .number:
-            return players!.sorted(by: { $0.number < $1.number })
+            return filtered!.sorted(by: { $0.number < $1.number })
+        case .position:
+            return filtered!.sorted(by: { $0.position < $1.position })
         }
     }
     

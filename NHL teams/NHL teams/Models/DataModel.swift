@@ -14,16 +14,12 @@ class DataModel: NSObject {
     static let shared = DataModel()
     
     var teams = [Team]()
+    var positions = [String]()
     
     enum TeamSort: String {
         case name
         case number
-    }
-    
-    enum PositionFilter: String {
-        case forward
-        case defence
-        case goalie
+        case position
     }
     
     // MARK: Team methods
@@ -64,16 +60,8 @@ class DataModel: NSObject {
     /// Search the local list of teams or use the API if necessary
     /// - Parameters:
     ///   - id: int value of team ID
-    ///   - sort: enum value of the requested sort order
     ///   - complete: callback that returns the team or an error message
-    func getTeam(team: Team, sort: TeamSort = .name, complete: @escaping ((_ : Team?, _ : String?) -> Void)) {
-        if team.players != nil {
-            team.players = team.sortedPlayers(sort)
-            complete(team, nil)
-            return
-        }
-        
-        // if the list is empty, call the API
+    func getTeam(team: Team, complete: @escaping ((_ : Team?, _ : String?) -> Void)) {
         AF.request(NHLRouter.getTeam(id: team.teamId))
             .validate(statusCode: 200..<300)
             .responseObject { (response: DataResponse<SingleTeamResponse, AFError>) in
@@ -85,7 +73,9 @@ class DataModel: NSObject {
                             break
                         }
                             
-                            team.players = team.sortedPlayers(sort)
+                            if let players = team.players {
+                                self.savePositions(players)
+                            }
                             complete(team, nil)
                         } catch {
                             complete(nil, "Unable to load players")
@@ -126,6 +116,16 @@ class DataModel: NSObject {
                         complete(nil, error.localizedDescription)
                     }
                 }
+        }
+    }
+    
+    /// Save the positions that come in from the API
+    /// - Parameter players: array of players to look for positions
+    func savePositions(_ players: [Player]) {
+        for player in players {
+            if !self.positions.contains(player.position) {
+                self.positions.append(player.position)
+            }
         }
     }
     

@@ -18,10 +18,47 @@
                             <view contentMode="scaleToFill" id="TNk-Ju-olW">
                                 <rect key="frame" x="0.0" y="88" width="414" height="382"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yvZ-Ae-Q4N">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="tJ6-kD-v5d"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Name"/>
+                                            <segment title="Number"/>
+                                            <segment title="Position"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="Lmz-oS-xxN"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdl-mL-Io8">
+                                        <rect key="frame" x="0.0" y="36" width="414" height="36"/>
+                                        <color key="backgroundColor" white="0.89954337899543368" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="YMq-Uy-Wim"/>
+                                        </constraints>
+                                        <state key="normal" title="Filter by position">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onFilterButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="pts-Vm-ffi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="yvZ-Ae-Q4N" firstAttribute="top" secondItem="TNk-Ju-olW" secondAttribute="top" id="7JX-Bg-Kug"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rdl-mL-Io8" secondAttribute="trailing" id="H7g-WW-V5x"/>
+                                    <constraint firstItem="Rdl-mL-Io8" firstAttribute="top" secondItem="yvZ-Ae-Q4N" secondAttribute="bottom" id="JPc-MT-gtF"/>
+                                    <constraint firstAttribute="trailing" secondItem="yvZ-Ae-Q4N" secondAttribute="trailing" id="RDo-9y-Rik"/>
+                                    <constraint firstItem="Rdl-mL-Io8" firstAttribute="leading" secondItem="TNk-Ju-olW" secondAttribute="leading" id="hfF-zU-bod"/>
+                                    <constraint firstItem="yvZ-Ae-Q4N" firstAttribute="leading" secondItem="TNk-Ju-olW" secondAttribute="leading" id="kNk-YH-mqi"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-QO-Dnd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="TTI-61-mx1"/>
@@ -31,10 +68,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="W1D-QO-Dnd" firstAttribute="top" secondItem="Rdl-mL-Io8" secondAttribute="bottom" id="I5J-pi-SEV"/>
                             <constraint firstItem="W1D-QO-Dnd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JTE-hm-AhD"/>
                             <constraint firstItem="W1D-QO-Dnd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NCY-jG-B3p"/>
                             <constraint firstItem="W1D-QO-Dnd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jNh-qU-qoz"/>
-                            <constraint firstItem="W1D-QO-Dnd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rvD-tH-pQw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -46,6 +83,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="Rdl-mL-Io8" id="mgE-SC-CTJ"/>
+                        <outlet property="sortSegmentedControl" destination="yvZ-Ae-Q4N" id="UNa-MO-Fx2"/>
                         <outlet property="table" destination="W1D-QO-Dnd" id="Rfx-lf-Jzd"/>
                     </connections>
                 </viewController>

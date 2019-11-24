@@ -11,8 +11,13 @@ import SideMenu
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var table: UITableView!
+    @IBOutlet var sortSegmentedControl: UISegmentedControl!
+    @IBOutlet var filterButton: UIButton!
     
     var team: Team?
+    var sortedPlayers: [Player]?
+    var selectedSort: DataModel.TeamSort = .name
+    var positionFilter: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +40,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadTeam() {
-        DataModel.shared.getTeam(team: team!, sort: .name, complete: {(team, error) in
+        DataModel.shared.getTeam(team: team!, complete: {(team, error) in
             if error != nil {
                 self.showAlert(title: "Download error", message: error!)
                 return
             }
             
             self.team = team
+            self.sortedPlayers = team!.sortedPlayers(self.selectedSort, filter: self.positionFilter)
             self.table.reloadData()
         })
     }
@@ -62,16 +68,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         return settings
     }
+    
+    // MARK: Sort and filter methods
+    
+    @IBAction func segmentChanged() {
+        let sortingMethods: [DataModel.TeamSort] = [.name, .number, .position]
+        self.selectedSort = sortingMethods[sortSegmentedControl.selectedSegmentIndex]
+        loadTeam()
+    }
+    
+    @IBAction func onFilterButton() {
+        
+    }
 
     // MARK: Table delegate methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return team?.players?.count ?? 0
+        return sortedPlayers?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerTableViewCell
-        if let player = self.team?.players?[indexPath.row] {
+        if let player = self.sortedPlayers?[indexPath.row] {
             cell.render(player: player)
         }
         return cell
@@ -80,7 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        if let player = team?.players?[indexPath.row] {
+        if let player = sortedPlayers?[indexPath.row] {
             let controller = PlayerViewController(player: player)
             self.navigationController?.pushViewController(controller, animated: true)
         }
