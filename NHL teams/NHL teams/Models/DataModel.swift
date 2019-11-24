@@ -19,7 +19,6 @@ class DataModel: NSObject {
     enum TeamSort: String {
         case name
         case number
-        case position
     }
     
     // MARK: Team methods

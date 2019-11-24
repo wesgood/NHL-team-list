@@ -72,13 +72,41 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: Sort and filter methods
     
     @IBAction func segmentChanged() {
-        let sortingMethods: [DataModel.TeamSort] = [.name, .number, .position]
+        let sortingMethods: [DataModel.TeamSort] = [.name, .number]
         self.selectedSort = sortingMethods[sortSegmentedControl.selectedSegmentIndex]
         loadTeam()
     }
     
     @IBAction func onFilterButton() {
+        let sheet = UIAlertController(title: "Select position", message: nil, preferredStyle: .actionSheet)
         
+        for position in DataModel.shared.positions.sorted() {
+            let action = UIAlertAction(title: position, style: .default) { (action) in
+                self.positionFilter = position
+                self.updatePositionFilterButton()
+                self.loadTeam()
+            }
+            sheet.addAction(action)
+        }
+        
+        let clearAction = UIAlertAction(title: "Clear selection", style: .destructive) { (action) in
+            self.positionFilter = nil
+            self.updatePositionFilterButton()
+            self.loadTeam()
+        }
+        sheet.addAction(clearAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        sheet.addAction(cancelAction)
+        present(sheet, animated: true, completion: nil)
+    }
+    
+    func updatePositionFilterButton() {
+        if positionFilter == nil {
+            filterButton.setTitle("Filter by position", for: .normal)
+        } else {
+            filterButton.setTitle("Filtering by position: \(positionFilter!)", for: .normal)
+        }
     }
 
     // MARK: Table delegate methods
@@ -103,5 +131,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
+    // MARK: Filter overlay
+    
 }
 

@@ -43,8 +43,6 @@ class Team: NSObject, Mappable {
             return filtered!.sorted(by: { $0.name < $1.name })
         case .number:
             return filtered!.sorted(by: { $0.number < $1.number })
-        case .position:
-            return filtered!.sorted(by: { $0.position < $1.position })
         }
     }
     
