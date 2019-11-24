@@ -99,6 +99,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IP6-9u-h3g" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="CNn-GZ-BF2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DaH-C5-MTe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>

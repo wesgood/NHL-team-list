@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var table: UITableView!
@@ -43,6 +44,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.team = team
             self.table.reloadData()
         })
+    }
+    
+    // pulled directly from the side menu library configuration
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sideMenuNavigationController = segue.destination as? SideMenuNavigationController else { return }
+        sideMenuNavigationController.settings = makeSettings()
+    }
+    
+    private func makeSettings() -> SideMenuSettings {
+        let presentationStyle = SideMenuPresentationStyle.viewSlideOutMenuIn
+        presentationStyle.onTopShadowOpacity = 0.6
+
+        var settings = SideMenuSettings()
+        settings.presentationStyle = presentationStyle
+        settings.menuWidth = min(view.frame.width, view.frame.height) * 0.9
+
+        return settings
     }
 
     // MARK: Table delegate methods
