@@ -39,6 +39,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         showBanner()
         
+        // reset filter and sort when changing teams
+        sortSegmentedControl.selectedSegmentIndex = 0
+        selectedSort = .name
+        positionFilter = nil
+        updatePositionFilterButton()
+        
         loadTeam()
     }
     
