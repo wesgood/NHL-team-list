@@ -33,7 +33,7 @@ class Player: NSObject, Mappable {
             playerId <- map["id"]
             name <- map["fullName"]
             position <- map["primaryPosition.name"]
-            number <- map["primaryNumber"]
+            number <- (map["primaryNumber"], JsonIntTransformer())
         }
         
         country <- map["birthCountry"]

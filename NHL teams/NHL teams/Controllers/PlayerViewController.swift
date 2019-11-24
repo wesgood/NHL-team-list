@@ -42,7 +42,8 @@ class PlayerViewController: UIViewController {
             self.loadPlayerData()
         }
     }
-
+    
+    /// Update the view to include the selected player
     func loadPlayerData() {
         nameLabel.text = player.name
         dobLabel.text = player.dob?.format("MMMM d, YYYY")

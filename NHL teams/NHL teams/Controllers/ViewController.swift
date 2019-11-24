@@ -104,7 +104,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         sheet.addAction(cancelAction)
-        present(sheet, animated: true, completion: nil)
+        self.present(sheet, animated: true, completion: nil)
     }
     
     func updatePositionFilterButton() {
