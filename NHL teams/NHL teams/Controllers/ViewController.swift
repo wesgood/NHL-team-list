@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         self.team = team
+        self.navigationItem.title = team.name
         
         showBanner()
         

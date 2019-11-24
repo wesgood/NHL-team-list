@@ -37,7 +37,7 @@ class Player: NSObject, Mappable {
             number <- (map["primaryNumber"], JsonIntTransformer())
         }
         
-        country <- map["birthCountry"]
+        country <- map["nationality"]
         dob <- (map["birthDate"], JsonDateTransformer())
     }
     
