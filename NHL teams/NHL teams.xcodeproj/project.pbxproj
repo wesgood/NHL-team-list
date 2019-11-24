@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8310DD29238A1EE8007DFE33 /* SingleTeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD28238A1EE8007DFE33 /* SingleTeamResponse.swift */; };
+		8310DD2D238A1FA3007DFE33 /* SinglePlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD2C238A1FA3007DFE33 /* SinglePlayerResponse.swift */; };
 		838C49B32389F30F003E7400 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B12389F30F003E7400 /* PlayerViewController.swift */; };
 		838C49B42389F30F003E7400 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838C49B22389F30F003E7400 /* PlayerViewController.xib */; };
 		838C49B72389F335003E7400 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B62389F335003E7400 /* DataModel.swift */; };
@@ -14,8 +16,7 @@
 		838C49BB2389F354003E7400 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49BA2389F354003E7400 /* Player.swift */; };
 		838C49BE2389F6ED003E7400 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49BD2389F6ED003E7400 /* UIViewController+Extensions.swift */; };
 		838C49C2238A081E003E7400 /* SideMenuTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49C1238A081E003E7400 /* SideMenuTeamViewController.swift */; };
-		838C49C5238A0B60003E7400 /* TeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49C4238A0B60003E7400 /* TeamResponse.swift */; };
-		838C49C7238A0FD5003E7400 /* PeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49C6238A0FD5003E7400 /* PeopleResponse.swift */; };
+		838C49C5238A0B60003E7400 /* TeamListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49C4238A0B60003E7400 /* TeamListResponse.swift */; };
 		83F61C782389EF340077B19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C772389EF340077B19E /* AppDelegate.swift */; };
 		83F61C7A2389EF340077B19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C792389EF340077B19E /* SceneDelegate.swift */; };
 		83F61C7C2389EF340077B19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F61C7B2389EF340077B19E /* ViewController.swift */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		3586A1D60C70DD8B2BB1F6F6 /* Pods-NHL teams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NHL teams.debug.xcconfig"; path = "Target Support Files/Pods-NHL teams/Pods-NHL teams.debug.xcconfig"; sourceTree = "<group>"; };
 		7104A820890E3214F36593E4 /* Pods_NHL_teams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NHL_teams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8310DD28238A1EE8007DFE33 /* SingleTeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTeamResponse.swift; sourceTree = "<group>"; };
+		8310DD2C238A1FA3007DFE33 /* SinglePlayerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerResponse.swift; sourceTree = "<group>"; };
 		838C49B12389F30F003E7400 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		838C49B22389F30F003E7400 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		838C49B62389F335003E7400 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -35,8 +38,7 @@
 		838C49BA2389F354003E7400 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		838C49BD2389F6ED003E7400 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		838C49C1238A081E003E7400 /* SideMenuTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTeamViewController.swift; sourceTree = "<group>"; };
-		838C49C4238A0B60003E7400 /* TeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResponse.swift; sourceTree = "<group>"; };
-		838C49C6238A0FD5003E7400 /* PeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponse.swift; sourceTree = "<group>"; };
+		838C49C4238A0B60003E7400 /* TeamListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListResponse.swift; sourceTree = "<group>"; };
 		83F61C742389EF340077B19E /* NHL teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NHL teams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F61C772389EF340077B19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83F61C792389EF340077B19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,8 +111,9 @@
 		838C49C3238A0B4E003E7400 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				838C49C4238A0B60003E7400 /* TeamResponse.swift */,
-				838C49C6238A0FD5003E7400 /* PeopleResponse.swift */,
+				838C49C4238A0B60003E7400 /* TeamListResponse.swift */,
+				8310DD28238A1EE8007DFE33 /* SingleTeamResponse.swift */,
+				8310DD2C238A1FA3007DFE33 /* SinglePlayerResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -267,14 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F61C7C2389EF340077B19E /* ViewController.swift in Sources */,
-				838C49C5238A0B60003E7400 /* TeamResponse.swift in Sources */,
+				838C49C5238A0B60003E7400 /* TeamListResponse.swift in Sources */,
 				838C49B92389F34A003E7400 /* Team.swift in Sources */,
 				83F61C782389EF340077B19E /* AppDelegate.swift in Sources */,
 				838C49BE2389F6ED003E7400 /* UIViewController+Extensions.swift in Sources */,
 				838C49C2238A081E003E7400 /* SideMenuTeamViewController.swift in Sources */,
 				838C49BB2389F354003E7400 /* Player.swift in Sources */,
+				8310DD2D238A1FA3007DFE33 /* SinglePlayerResponse.swift in Sources */,
+				8310DD29238A1EE8007DFE33 /* SingleTeamResponse.swift in Sources */,
 				83F61C7A2389EF340077B19E /* SceneDelegate.swift in Sources */,
-				838C49C7238A0FD5003E7400 /* PeopleResponse.swift in Sources */,
 				838C49B32389F30F003E7400 /* PlayerViewController.swift in Sources */,
 				838C49B72389F335003E7400 /* DataModel.swift in Sources */,
 			);

@@ -9,5 +9,6 @@ target 'NHL teams' do
   pod 'Kingfisher'
   pod 'AlamofireObjectMapper', '~> 6.2'
   pod 'SideMenu', '~> 6.0'
+  pod 'SDWebImageSVGCoder'
 
 end

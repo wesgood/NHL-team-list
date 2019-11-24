@@ -40,7 +40,7 @@ class DataModel: NSObject {
         // if the list is empty, call the API
         AF.request(NHLRouter.getTeams(params: [:]))
             .validate(statusCode: 200..<300)
-            .responseObject { (response: DataResponse<TeamResponse, AFError>) in
+            .responseObject { (response: DataResponse<TeamListResponse, AFError>) in
                     switch response.result {
                     case .success:
                         do {
@@ -76,15 +76,15 @@ class DataModel: NSObject {
         // if the list is empty, call the API
         AF.request(NHLRouter.getTeam(id: team.teamId))
             .validate(statusCode: 200..<300)
-            .responseObject { (response: DataResponse<PeopleResponse, AFError>) in
+            .responseObject { (response: DataResponse<SingleTeamResponse, AFError>) in
                     switch response.result {
                     case .success:
                         do {
-                        guard let teamList = try response.result.get().players else {
+                        guard let team = try response.result.get().team else {
                             complete(nil, "Unable to load players")
                             break
                         }
-                            team.players = teamList
+                            
                             team.players = team.sortedPlayers(sort)
                             complete(team, nil)
                         } catch {
@@ -99,23 +99,34 @@ class DataModel: NSObject {
     }
     
     // MARK: Player methods
-    
-    /// Get players
-    /// - Parameters:
-    ///   - teamId: int value of team ID
-    ///   - position: position filter enum
-    ///   - sort: enum value of the requested sort order
-    ///   - complete: callback that returns the players or an error message
-    func getPlayers(teamId: Int, position: PositionFilter?, sort: TeamSort = .name, complete: ((_ : [Player], _ : String?) -> Void)) {
         
-    }
-    
     /// Get specific player from the cache or API
     /// - Parameters:
     ///   - id: int value of the player ID
     ///   - complete: callback of the player or error message
-    func getPlayer(id: Int, complete: ((_ : Player?, _ : String?) -> Void)) {
-        
+    func getPlayer(id: Int, complete: @escaping ((_ : Player?, _ : String?) -> Void)) {
+        // we always call the API to make sure we have the latest
+        AF.request(NHLRouter.getPlayer(id: id))
+            .validate(statusCode: 200..<300)
+            .responseObject { (response: DataResponse<SinglePlayerResponse, AFError>) in
+                switch response.result {
+                case .success:
+                    do {
+                        guard let player = try response.result.get().player else {
+                            complete(nil, "Unable to load player")
+                            break
+                        }
+                        
+                        complete(player, nil)
+                    } catch {
+                        complete(nil, "Unable to load player")
+                    }
+                case .failure:
+                    if let error = response.error {
+                        complete(nil, error.localizedDescription)
+                    }
+                }
+        }
     }
     
     // MARK: API methods

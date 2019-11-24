@@ -7,11 +7,15 @@ PODS:
     - Kingfisher/Core (= 5.10.1)
   - Kingfisher/Core (5.10.1)
   - ObjectMapper (3.5.1)
+  - SDWebImage/Core (5.3.1)
+  - SDWebImageSVGCoder (1.1.0):
+    - SDWebImage/Core (~> 5.0)
   - SideMenu (6.4.7)
 
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 6.2)
   - Kingfisher
+  - SDWebImageSVGCoder
   - SideMenu (~> 6.0)
 
 SPEC REPOS:
@@ -20,6 +24,8 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - Kingfisher
     - ObjectMapper
+    - SDWebImage
+    - SDWebImageSVGCoder
     - SideMenu
 
 SPEC CHECKSUMS:
@@ -27,8 +33,10 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  SDWebImage: 7137d57385fb632129838c1e6ab9528a22c666cc
+  SDWebImageSVGCoder: 5b52866bc9dad0f3eae436f3c03c7a27b64eae16
   SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
 
-PODFILE CHECKSUM: f6428e963b3f43f591dcdce4970991dc79663222
+PODFILE CHECKSUM: e3a3c97389928e7e0f4caa02f1a6831a8b4d1b20
 
 COCOAPODS: 1.7.5

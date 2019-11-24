@@ -24,6 +24,7 @@ class Team: NSObject, Mappable {
         name <- map["name"]
         teamId <- map["id"]
         logo <- map["logo"]
+        players <- map["roster.roster"]
     }
     
     func sortedPlayers(_ sort: DataModel.TeamSort) -> [Player] {

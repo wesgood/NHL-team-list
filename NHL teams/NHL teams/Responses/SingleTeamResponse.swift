@@ -1,5 +1,5 @@
 //
-//  TeamResponse.swift
+//  SingleTeamResponse.swift
 //  NHL teams
 //
 //  Created by Wes Goodhoofd on 2019-11-23.
@@ -9,8 +9,8 @@
 import UIKit
 import ObjectMapper
 
-class TeamResponse: NSObject, Mappable {
-    var teams: [Team]!
+class SingleTeamResponse: NSObject, Mappable {
+    var team: Team!
     
     required init?(map: Map) {
         super.init()
@@ -18,6 +18,6 @@ class TeamResponse: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        teams <- map["teams"]
+        team <- map["teams.0"]
     }
 }

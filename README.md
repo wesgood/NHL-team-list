@@ -7,6 +7,7 @@ Mobile Swift project to display all NHL teams and rosters.
 2. [Kingfisher](https://github.com/onevcat/Kingfisher) - Image download manager
 3. [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper) - JSON to object mapper
 4. [SideMenu](https://github.com/jonkykong/SideMenu) - View controller to manage the sliding view
+5. [SDWebImageSVGCoder](https://github.com/SDWebImage/SDWebImageSVGCoder) - Render team logo SVGs in table cell
 
 ## Development notes
 
@@ -15,4 +16,4 @@ Mobile Swift project to display all NHL teams and rosters.
 * Normally when working in a team I avoid use of Storyboards beyond the main view controller. This is because the Storyboard file is not conventional XML and doesn't work well with version control. In this case the side menu library I chose prefers more structure.
 
 ## Total development time
-**2.5 hours**
+**3 hours**
