@@ -52,7 +52,10 @@ class SideMenuTeamViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        // TODO - dismiss the table and show the team
+        if let team = teams?[indexPath.row] {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "teamSelected"), object: team)
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 }

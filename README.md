@@ -15,4 +15,4 @@ Mobile Swift project to display all NHL teams and rosters.
 * Normally when working in a team I avoid use of Storyboards beyond the main view controller. This is because the Storyboard file is not conventional XML and doesn't work well with version control. In this case the side menu library I chose prefers more structure.
 
 ## Total development time
-**1.5 hours**
+**2.5 hours**

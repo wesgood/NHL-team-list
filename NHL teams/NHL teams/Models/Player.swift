@@ -10,13 +10,13 @@ import UIKit
 import ObjectMapper
 
 class Player: NSObject, Mappable {
-    var name: String?
-    var country: String?
+    var name: String!
+    var country: String!
     var photo: String?
-    var playerId: Int?
+    var playerId: Int!
     var dob: Date?
-    var number: Int?
-    var position: String?
+    var number: Int!
+    var position: String!
     
     required init?(map: Map) {
         super.init()
@@ -24,12 +24,12 @@ class Player: NSObject, Mappable {
     }
     
     func mapping(map: Map) {
-        name <- map["name"]
-        country <- map["country"]
+        name <- map["person.fullName"]
+        country <- map["birthCountry"]
         photo <- map["photo"]
-        playerId <- map["id"]
+        playerId <- map["person.id"]
         dob <- map["date_of_birth"]
-        number <- map["number"]
-        position <- map["position"]
+        number <- map["jerseyNumber"]
+        position <- map["position.code"]
     }
 }

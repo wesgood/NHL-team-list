@@ -19,6 +19,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // register a default cell
         self.table.register(UITableViewCell.self, forCellReuseIdentifier: "defaultCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(teamSelected), name: NSNotification.Name(rawValue: "teamSelected"), object: nil)
+    }
+    
+    @objc func teamSelected(_ notification: Notification) {
+        guard let team = notification.object as? Team else {
+            return
+        }
+        
+        self.team = team
+        
+        loadTeam()
+    }
+    
+    func loadTeam() {
+        DataModel.shared.getTeam(team: team!, sort: .name, complete: {(team, error) in
+            if error != nil {
+                self.showAlert(title: "Download error", message: error!)
+                return
+            }
+            
+            self.team = team
+            self.table.reloadData()
+        })
     }
 
     // MARK: Table delegate methods
@@ -39,7 +63,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        // TODO - dismiss the table and show the team
+        if let player = team?.players?[indexPath.row] {
+            let controller = PlayerViewController(player: player)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
 

@@ -14,7 +14,6 @@ class DataModel: NSObject {
     static let shared = DataModel()
     
     var teams = [Team]()
-    var players = [Player]()
     
     enum TeamSort: String {
         case name
@@ -49,8 +48,8 @@ class DataModel: NSObject {
                             complete(nil, "Unable to load teams")
                             break
                         }
-                            self.teams = teamList.sorted(by: { return $0.name < $1.name })
-                            complete(teamList, nil)
+                            self.teams = teamList.sorted(by: { $0.name < $1.name })
+                            complete(self.teams, nil)
                         } catch {
                             complete(nil, "Unable to load teams")
                         }
@@ -67,8 +66,36 @@ class DataModel: NSObject {
     ///   - id: int value of team ID
     ///   - sort: enum value of the requested sort order
     ///   - complete: callback that returns the team or an error message
-    func getTeam(id: Int, sort: TeamSort = .name, complete: ((_ : Team?, _ : String?) -> Void)) {
+    func getTeam(team: Team, sort: TeamSort = .name, complete: @escaping ((_ : Team?, _ : String?) -> Void)) {
+        if team.players != nil {
+            team.players = team.sortedPlayers(sort)
+            complete(team, nil)
+            return
+        }
         
+        // if the list is empty, call the API
+        AF.request(NHLRouter.getTeam(id: team.teamId))
+            .validate(statusCode: 200..<300)
+            .responseObject { (response: DataResponse<PeopleResponse, AFError>) in
+                    switch response.result {
+                    case .success:
+                        do {
+                        guard let teamList = try response.result.get().players else {
+                            complete(nil, "Unable to load players")
+                            break
+                        }
+                            team.players = teamList
+                            team.players = team.sortedPlayers(sort)
+                            complete(team, nil)
+                        } catch {
+                            complete(nil, "Unable to load players")
+                        }
+                    case .failure:
+                        if let error = response.error {
+                            complete(nil, error.localizedDescription)
+                        }
+                    }
+                }
     }
     
     // MARK: Player methods
@@ -95,8 +122,8 @@ class DataModel: NSObject {
     
     enum NHLRouter: URLRequestConvertible {
         case getTeams(params: Parameters)
-        case getTeam(id: String)
-        case getPlayer(id: String)
+        case getTeam(id: Int)
+        case getPlayer(id: Int)
         
         static let baseURLString = "https://statsapi.web.nhl.com/api/v1/"
         
@@ -106,7 +133,7 @@ class DataModel: NSObject {
                 case let .getTeams(params):
                     return ("/teams", params)
                 case let .getTeam(id):
-                    return ("/teams/\(id)", [:])
+                    return ("/teams/\(id)", ["expand" : "team.roster"])
                 case let .getPlayer(id):
                     return ("/people/\(id)", [:])
                 }
