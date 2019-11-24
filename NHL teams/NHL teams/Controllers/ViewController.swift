@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view.
         
         // register a default cell
-        self.table.register(UITableViewCell.self, forCellReuseIdentifier: "defaultCell")
+        self.table.register(UINib(nibName: "PlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "playerCell")
         
         NotificationCenter.default.addObserver(self, selector: #selector(teamSelected), name: NSNotification.Name(rawValue: "teamSelected"), object: nil)
     }
@@ -70,10 +70,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerTableViewCell
         if let player = self.team?.players?[indexPath.row] {
-            cell.textLabel?.text = player.name
-            // TODO - load team logo
+            cell.render(player: player)
         }
         return cell
     }

@@ -26,7 +26,7 @@ class Player: NSObject, Mappable {
         // these values are in the list
         name <- map["person.fullName"]
         playerId <- map["person.id"]
-        position <- map["position.code"]
+        position <- map["position.name"]
         number <- map["jerseyNumber"]
         
         if playerId == nil {
@@ -40,6 +40,7 @@ class Player: NSObject, Mappable {
         dob <- (map["birthDate"], JsonDateTransformer())
     }
     
+    /// Use the researched API to find the portrait URL
     func portraitUrl() -> URL {
         let urlString = "https://nhl.bamcontent.com/images/headshots/current/168x168/\(String(describing: playerId!)).jpg"
         return URL(string: urlString)!
