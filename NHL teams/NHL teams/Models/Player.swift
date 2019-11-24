@@ -44,12 +44,4 @@ class Player: NSObject, Mappable {
         let urlString = "https://nhl.bamcontent.com/images/headshots/current/168x168/\(String(describing: playerId!)).jpg"
         return URL(string: urlString)!
     }
-    
-    func flagUrl() -> URL? {
-        if country == nil {
-            return nil
-        }
-        let urlString = "https://restcountries.eu/rest/v2/alpha/\(country!).svg"
-        return URL(string: urlString)
-    }
 }

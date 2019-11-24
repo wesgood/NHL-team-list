@@ -46,7 +46,6 @@ class PlayerViewController: UIViewController {
     func loadPlayerData() {
         nameLabel.text = player.name
         dobLabel.text = player.dob?.format("MMMM d, YYYY")
-        countryLabel.text = player.country
         jerseyNumberLabel.text = player.number
         positionLabel.text = player.position
         
@@ -54,7 +53,17 @@ class PlayerViewController: UIViewController {
         portraitImageView.kf.setImage(with: player.portraitUrl())
         
         // load the flag
-        countryFlagImageView.sd_setImage(with: player.flagUrl())
+        if let country = player.country {
+            DataModel.shared.getCountry(code: country) { (country, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+
+                self.countryLabel.text = country!.name
+                self.countryFlagImageView.sd_setImage(with: URL(string: country!.flag))
+            }
+        }
     }
 
     /*

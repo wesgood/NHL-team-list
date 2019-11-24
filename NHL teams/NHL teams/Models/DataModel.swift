@@ -129,6 +129,28 @@ class DataModel: NSObject {
         }
     }
     
+    // MARK: Country methods
+    
+    func getCountry(code: String, complete: @escaping ((_ : Country?, _ : String?) -> Void)) {
+        AF.request("https://restcountries.eu/rest/v2/alpha/\(code)")
+            .validate(statusCode: 200..<300)
+            .responseObject { (response: DataResponse<Country, AFError>) in
+                switch response.result {
+                case .success:
+                    do {
+                        let country = try response.result.get()                        
+                        complete(country, nil)
+                    } catch {
+                        complete(nil, "Unable to load country")
+                    }
+                case .failure:
+                    if let error = response.error {
+                        complete(nil, error.localizedDescription)
+                    }
+                }
+        }
+    }
+    
     // MARK: API methods
     
     enum NHLRouter: URLRequestConvertible {

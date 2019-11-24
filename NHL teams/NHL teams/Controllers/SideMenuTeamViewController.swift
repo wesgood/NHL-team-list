@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SideMenuTeamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var table: UITableView!
@@ -44,7 +45,7 @@ class SideMenuTeamViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
         if let team = self.teams?[indexPath.row] {
             cell.textLabel?.text = team.name
-            // TODO - load team logo
+            cell.imageView?.sd_setImage(with: team.logoUrl(), completed: nil)
         }
         return cell
     }

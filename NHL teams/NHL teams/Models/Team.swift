@@ -39,4 +39,9 @@ class Team: NSObject, Mappable {
             return players!.sorted(by: { $0.number < $1.number })
         }
     }
+    
+    func logoUrl() -> URL {
+        let urlString = "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/\(String(describing: teamId!)).svg"
+        return URL(string: urlString)!
+    }
 }

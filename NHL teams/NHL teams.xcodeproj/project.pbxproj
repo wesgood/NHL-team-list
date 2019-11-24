@@ -11,6 +11,7 @@
 		8310DD2D238A1FA3007DFE33 /* SinglePlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD2C238A1FA3007DFE33 /* SinglePlayerResponse.swift */; };
 		8310DD30238A25F7007DFE33 /* JsonDateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD2F238A25F7007DFE33 /* JsonDateTransformer.swift */; };
 		8310DD32238A264C007DFE33 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD31238A264C007DFE33 /* Date+Extensions.swift */; };
+		8310DD34238A27E6007DFE33 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD33238A27E6007DFE33 /* Country.swift */; };
 		838C49B32389F30F003E7400 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B12389F30F003E7400 /* PlayerViewController.swift */; };
 		838C49B42389F30F003E7400 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838C49B22389F30F003E7400 /* PlayerViewController.xib */; };
 		838C49B72389F335003E7400 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B62389F335003E7400 /* DataModel.swift */; };
@@ -35,6 +36,7 @@
 		8310DD2C238A1FA3007DFE33 /* SinglePlayerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePlayerResponse.swift; sourceTree = "<group>"; };
 		8310DD2F238A25F7007DFE33 /* JsonDateTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDateTransformer.swift; sourceTree = "<group>"; };
 		8310DD31238A264C007DFE33 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		8310DD33238A27E6007DFE33 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		838C49B12389F30F003E7400 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		838C49B22389F30F003E7400 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		838C49B62389F335003E7400 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				838C49B62389F335003E7400 /* DataModel.swift */,
 				838C49B82389F34A003E7400 /* Team.swift */,
 				838C49BA2389F354003E7400 /* Player.swift */,
+				8310DD33238A27E6007DFE33 /* Country.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				83F61C7A2389EF340077B19E /* SceneDelegate.swift in Sources */,
 				838C49B32389F30F003E7400 /* PlayerViewController.swift in Sources */,
 				8310DD30238A25F7007DFE33 /* JsonDateTransformer.swift in Sources */,
+				8310DD34238A27E6007DFE33 /* Country.swift in Sources */,
 				838C49B72389F335003E7400 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
