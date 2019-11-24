@@ -14,7 +14,7 @@ class Player: NSObject, Mappable {
     var country: String?
     var playerId: Int!
     var dob: Date?
-    var number: String!
+    var number: Int!
     var position: String!
     
     required init?(map: Map) {
@@ -27,7 +27,7 @@ class Player: NSObject, Mappable {
         name <- map["person.fullName"]
         playerId <- map["person.id"]
         position <- map["position.name"]
-        number <- map["jerseyNumber"]
+        number <- (map["jerseyNumber"], JsonIntTransformer())
         
         if playerId == nil {
             playerId <- map["id"]

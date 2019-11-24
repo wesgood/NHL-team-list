@@ -42,6 +42,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadTeam() {
+        if team == nil {
+            return
+        }
+        
         DataModel.shared.getTeam(team: team!, complete: {(team, error) in
             if error != nil {
                 self.showAlert(title: "Download error", message: error!)

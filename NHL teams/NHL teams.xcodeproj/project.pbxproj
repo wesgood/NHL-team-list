@@ -14,6 +14,7 @@
 		8310DD34238A27E6007DFE33 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD33238A27E6007DFE33 /* Country.swift */; };
 		8310DD38238A2DCA007DFE33 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD36238A2DCA007DFE33 /* PlayerTableViewCell.swift */; };
 		8310DD39238A2DCA007DFE33 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8310DD37238A2DCA007DFE33 /* PlayerTableViewCell.xib */; };
+		8310DD3B238B32A5007DFE33 /* JsonIntTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310DD3A238B32A5007DFE33 /* JsonIntTransformer.swift */; };
 		838C49B32389F30F003E7400 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B12389F30F003E7400 /* PlayerViewController.swift */; };
 		838C49B42389F30F003E7400 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838C49B22389F30F003E7400 /* PlayerViewController.xib */; };
 		838C49B72389F335003E7400 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838C49B62389F335003E7400 /* DataModel.swift */; };
@@ -41,6 +42,7 @@
 		8310DD33238A27E6007DFE33 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		8310DD36238A2DCA007DFE33 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		8310DD37238A2DCA007DFE33 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
+		8310DD3A238B32A5007DFE33 /* JsonIntTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonIntTransformer.swift; sourceTree = "<group>"; };
 		838C49B12389F30F003E7400 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		838C49B22389F30F003E7400 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		838C49B62389F335003E7400 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8310DD2F238A25F7007DFE33 /* JsonDateTransformer.swift */,
+				8310DD3A238B32A5007DFE33 /* JsonIntTransformer.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F61C7C2389EF340077B19E /* ViewController.swift in Sources */,
+				8310DD3B238B32A5007DFE33 /* JsonIntTransformer.swift in Sources */,
 				838C49C5238A0B60003E7400 /* TeamListResponse.swift in Sources */,
 				838C49B92389F34A003E7400 /* Team.swift in Sources */,
 				83F61C782389EF340077B19E /* AppDelegate.swift in Sources */,

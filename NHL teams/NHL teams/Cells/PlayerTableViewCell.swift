@@ -30,7 +30,7 @@ class PlayerTableViewCell: UITableViewCell {
         self.player = player
         
         nameLabel.text = player.name
-        numberLabel.text = player.number
+        numberLabel.text = (player.number != nil ) ? String(describing: player.number!) : nil
         positionLabel.text = player.position
     }
 }
