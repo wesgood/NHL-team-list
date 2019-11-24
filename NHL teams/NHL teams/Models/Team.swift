@@ -12,7 +12,6 @@ import ObjectMapper
 class Team: NSObject, Mappable {
     var name: String!
     var players: [Player]?
-    var logo: String?
     var teamId: Int!
     
     required init?(map: Map) {
@@ -23,10 +22,13 @@ class Team: NSObject, Mappable {
     func mapping(map: Map) {
         name <- map["name"]
         teamId <- map["id"]
-        logo <- map["logo"]
         players <- map["roster.roster"]
     }
     
+    /// Sort and filter the player list with the provided parameters
+    /// - Parameters:
+    ///   - sort: TeamSort value
+    ///   - filter: string of the player's position
     func sortedPlayers(_ sort: DataModel.TeamSort, filter: String? = nil) -> [Player] {
         if players == nil {
             return []
@@ -34,6 +36,7 @@ class Team: NSObject, Mappable {
         
         var filtered = players
         
+        // filter the player list if requested
         if filter != nil {
             filtered = players!.filter({ return $0.position == filter! })
         }

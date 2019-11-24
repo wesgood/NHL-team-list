@@ -130,6 +130,10 @@ class DataModel: NSObject {
     
     // MARK: Country methods
     
+    /// Use the separate country API to return a name and flag URL
+    /// - Parameters:
+    ///   - code: 3 letter country code
+    ///   - complete: callback of country object or error message
     func getCountry(code: String, complete: @escaping ((_ : Country?, _ : String?) -> Void)) {
         AF.request("https://restcountries.eu/rest/v2/alpha/\(code)")
             .validate(statusCode: 200..<300)

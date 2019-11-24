@@ -13,9 +13,12 @@ Uses Xcode 11, iOS 13 and Swift 5.
 
 ## APIs
 
+These are from the github link provided as well as searching for related content.
+
 1. NHL - https://gitlab.com/dword4/nhlapi/blob/master/stats-api.md
 2. NHL team logos - https://www-league.nhlstatic.com
-3. Country flags - https://restcountries.eu
+3. Player portraits - https://nhl.bamcontent.com
+4. Country flags - https://restcountries.eu
 
 ## Development notes
 
@@ -24,7 +27,7 @@ Uses Xcode 11, iOS 13 and Swift 5.
 * Normally when working in a team I avoid use of Storyboards beyond the main view controller. This is because the Storyboard file is not conventional XML and doesn't work well with version control. In this case the side menu library I chose prefers more storyboard structure.
 * The unsatisfied constraint error log appears to be a bug from Apple relating to the action sheet. See [this discussion](https://stackoverflow.com/questions/55653187/swift-default-alertviewcontroller-breaking-constraints) for more
 * The API structure is inconsistent for players on the roster vs retrieving individual player data. This is why the mapping for players has a separate section.
-* The data in the API seems incorrect too: there are too many centres.
+* The data in the API matches NHL.com but appears to be incorrect relating to positions. Most teams have many more centres than expected.
 
 ## Total development time
 **5.5 hours**

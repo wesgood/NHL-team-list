@@ -23,6 +23,7 @@ class SideMenuTeamViewController: UIViewController, UITableViewDelegate, UITable
         loadTeams()
     }
     
+    /// Request the teams from the DataModel and update the table
     func loadTeams() {
         DataModel.shared.getTeams { (teams, error) in
             if error != nil {
@@ -57,6 +58,7 @@ class SideMenuTeamViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // send the selected team with a broadcast notification
         if let team = teams?[indexPath.row] {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "teamSelected"), object: team)
             dismiss(animated: true, completion: nil)

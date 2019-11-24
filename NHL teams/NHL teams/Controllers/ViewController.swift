@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // register a default cell
+        // register a custom cell
         self.table.register(UINib(nibName: "PlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "playerCell")
         
         NotificationCenter.default.addObserver(self, selector: #selector(teamSelected), name: NSNotification.Name(rawValue: "teamSelected"), object: nil)
@@ -41,6 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         loadTeam()
     }
     
+    /// If a team is selected, get the full roster and update the table
     func loadTeam() {
         if team == nil {
             return
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     
-    // pulled directly from the side menu library configuration
+    /// pulled directly from the side menu library configuration
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let sideMenuNavigationController = segue.destination as? SideMenuNavigationController else { return }
         sideMenuNavigationController.settings = makeSettings()
@@ -77,12 +78,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: Sort and filter methods
     
+    /// Use the selected segment to update the sort order
     @IBAction func segmentChanged() {
         let sortingMethods: [DataModel.TeamSort] = [.name, .number]
         self.selectedSort = sortingMethods[sortSegmentedControl.selectedSegmentIndex]
         loadTeam()
     }
     
+    /// Show an action sheet with player positions collected from the team list
     @IBAction func onFilterButton() {
         let sheet = UIAlertController(title: "Select position", message: nil, preferredStyle: .actionSheet)
         
@@ -104,6 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         sheet.addAction(cancelAction)
+        
         self.present(sheet, animated: true, completion: nil)
     }
     

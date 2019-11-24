@@ -29,6 +29,7 @@ class Player: NSObject, Mappable {
         position <- map["position.name"]
         number <- (map["jerseyNumber"], JsonIntTransformer())
         
+        // when loading from the individual player request, different properties are required
         if playerId == nil {
             playerId <- map["id"]
             name <- map["fullName"]
