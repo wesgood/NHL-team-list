@@ -45,7 +45,11 @@ class SideMenuTeamViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
         if let team = self.teams?[indexPath.row] {
             cell.textLabel?.text = team.name
-            cell.imageView?.sd_setImage(with: team.logoUrl(), completed: nil)
+            cell.imageView?.sd_setImage(with: team.logoUrl(), completed: { (_, _, _, _) in
+                // force the table to reload the cell to properly render the image
+                tableView.reloadRows(at: [indexPath], with: .none)
+            })
+            
         }
         return cell
     }
