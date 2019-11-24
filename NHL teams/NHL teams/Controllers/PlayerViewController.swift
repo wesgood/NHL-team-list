@@ -45,9 +45,9 @@ class PlayerViewController: UIViewController {
 
     func loadPlayerData() {
         nameLabel.text = player.name
-        dobLabel.text = player.dob?.description
+        dobLabel.text = player.dob?.format("MMMM d, YYYY")
         countryLabel.text = player.country
-        jerseyNumberLabel.text = String(describing: player.number)
+        jerseyNumberLabel.text = player.number
         positionLabel.text = player.position
         
         // load their portrait

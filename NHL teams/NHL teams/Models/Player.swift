@@ -14,7 +14,7 @@ class Player: NSObject, Mappable {
     var country: String?
     var playerId: Int!
     var dob: Date?
-    var number: Int!
+    var number: String!
     var position: String!
     
     required init?(map: Map) {
@@ -37,7 +37,7 @@ class Player: NSObject, Mappable {
         }
         
         country <- map["birthCountry"]
-        dob <- map["birthDate"]
+        dob <- (map["birthDate"], JsonDateTransformer())
     }
     
     func portraitUrl() -> URL {
